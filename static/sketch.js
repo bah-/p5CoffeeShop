@@ -33,9 +33,16 @@ function prepareCoffee(){
 function orderCoffee(){
   game.orderCoffee();  
 }
+function getPayCheck(price){
+  game.getPayCheck(price);
+}
 
+function hireBarista(){
+  game.hireBarista();
+}
 
 function resetEverything(){
+  console.log("h");
   game= new Game();
   game.update();
   game.updateBudget();
@@ -43,6 +50,7 @@ function resetEverything(){
   game.updateCoffeeQueue();
   game.updateRemainCoffee();
   game.updateCoffeeSold();
+  game.updateBaristas();
 }
 // var w = 600;
 // var h = 400;
