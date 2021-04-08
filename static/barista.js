@@ -6,7 +6,7 @@ function Barista(price){
 
     this.update=function(){
         this.duration++;
-        if (this.duration>600){
+        if (this.duration>10079){
             this.duration=0;
             getPayCheck(this.price);
         }

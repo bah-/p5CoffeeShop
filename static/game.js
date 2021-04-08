@@ -48,7 +48,7 @@ function Game() {
 
 
     this.buyCoffee = function () {
-        if (this.budget > this.coffeePrice) {
+        if (this.budget >= this.coffeePrice) {
             this.remaincoffeeContent += 250;
             this.budget -= this.coffeePrice;
             this.updateBudget();
@@ -58,7 +58,7 @@ function Game() {
 
 
     this.buyCoffeeMachine = function () {
-        if (this.budget > this.coffeeMachinePrice) {
+        if (this.budget >= this.coffeeMachinePrice) {
             this.budget -= this.coffeeMachinePrice;
             this.updateBudget();
         }
@@ -171,7 +171,6 @@ function Game() {
         document.getElementById('buy-coffee').disabled = true;
         document.getElementById('prepare-coffee').disabled = true;
         document.getElementById('hire-barista').disabled = true;
-        console.log("bitti2");
         this.gameFinished = true;
 
     }
