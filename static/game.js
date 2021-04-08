@@ -121,9 +121,7 @@ function Game() {
     this.update = function () {
 
         if (this.gameFinished) return;
-        this.baristas.forEach(barista => {
-            barista.update();            
-        });
+
         this.updateTime();
 
         if (this.coffeeQueue.length > 0) {
@@ -139,6 +137,12 @@ function Game() {
         } else {
             document.getElementById('prepare-coffee').disabled = true;
         }
+        this.baristas.forEach(barista => {
+            if (this.coffeeQueue.length > 0) {
+                this.prepareCoffee();
+                if (this.slowMoTime < 20){} else barista.update();
+            } else barista.update();            
+        });
         this.decideOrder();
 
     }
